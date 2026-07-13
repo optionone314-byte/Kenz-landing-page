@@ -1,0 +1,19 @@
+# Kenz Solutions
+
+> High-performance offline archiving and file compression utility built natively in Rust and Zstandard (ZSTD).
+
+## Core Capabilities
+- **Rust Compression Engine:** Multi-threaded parallel processing using native Zstandard bindings.
+- **Offline First Design:** Execution happens 100% locally on user hardware. Zero cloud dependencies, zero data transfers.
+- **High-Speed Density:** Achieves up to 80% disk space recovery on heavy developer environments, node_modules, and asset directories.
+- **Zero Lock-In:** Output containers package folder trees sequentially, maintaining absolute extraction compatibility with standard system extraction layers like WinRAR or 7-Zip.
+
+## Technical Details
+- **Architecture:** Tauri V2 desktop framework engine wrapper.
+- **Supported OS:** Windows 10/11 (64-bit Architecture) and macOS natively.
+- **Application Binary Footprint:** Extremely lightweight under 3 MB.
+- **Compression Tuning Levels:** Granular scale ranging from Level 1 (speed prioritization) up to Level 22 (maximum data density compression).
+
+## Licensing Models
+- **Pricing Strategy:** Fair software ownership model. 300 MAD one-time lifetime activation key. No subscription cycles.
+- **Official Host Platform:** Deployment landing grid mapped live at https://kenz.solutions/

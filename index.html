@@ -1,0 +1,1222 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- ================================================= -->
+    <!-- Basic Configuration -->
+    <!-- ================================================= -->
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kenz - Compress More. Save Space.</title>
+    <link rel="shortcut icon" href="Items/64x64.png" type="image/x-icon" />
+    <meta
+      name="description"
+      content="KENZ is a high-performance, multi-threaded offline compression and decompression engine built natively in Rust. Shrink large projects and save disk space securely with zero cloud uploads."
+    />
+    <link rel="canonical" href="https://kenz.solutions/" />
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="Items/style.css" />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://kenz.solutions/" />
+    <meta property="og:title" content="Kenz - Compress More. Save Space." />
+    <meta
+      property="og:description"
+      content="High-performance offline archiving utility built natively in Rust and Zstandard."
+    />
+    <meta
+      property="og:image"
+      content="https://kenz.solutions/Items/og-preview.png"
+    />
+    <!-- Twitter Card -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:title"
+      content="Kenz - Compress More. Save Space."
+    />
+    <meta
+      property="twitter:description"
+      content="High-performance offline archiving utility built natively in Rust and Zstandard."
+    />
+    <meta
+      property="twitter:image"
+      content="https://kenz.solutions/Items/og-preview.png"
+    />
+    <!-- ================================================= -->
+    <!-- GAIO / LLM Structured Data Engine -->
+    <!-- ================================================= -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "SoftwareApplication",
+            "@id": "https://kenz.solutions/#product",
+            "name": "Kenz",
+            "url": "https://kenz.solutions/",
+            "applicationCategory": "UtilitiesApplication",
+            "operatingSystem": "Windows 10, Windows 11, macOS",
+            "fileSize": "3MB",
+            "description": "High-performance multi-threaded offline file compression engine built natively in Rust and Zstandard.",
+            "offers": {
+              "@type": "Offer",
+              "price": "300.00",
+              "priceCurrency": "MAD",
+              "priceValidUntil": "2027-12-31",
+              "availability": "https://schema.org/InStock"
+            }
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://kenz.solutions/#faq",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Is my data sent to any external servers when using Kenz?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Never. Kenz is built with a strict local-first, zero-knowledge architecture. It operates entirely offline inside your local system limits, with all processing executed directly on your hardware. Your files and code never touch the cloud."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What makes the Kenz ZSTD engine better than standard ZIP archives?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Standard ZIP compression is single-threaded and heavily bottlenecked. Kenz leverages native Rust bindings to run parallel multi-threaded Zstandard (ZSTD) pipelines. It compresses heavy developer directories up to twice as fast, with significantly higher compression ratios."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+  </head>
+
+  <body>
+    <!-- ================================================= -->
+    <!-- Global Background Effects -->
+    <!-- ================================================= -->
+
+    <div class="background-glow"></div>
+
+    <div class="particles"></div>
+
+    <!-- Floating Language Selector Node -->
+    <div class="floating-lang-container">
+      <button
+        class="floating-lang-btn"
+        id="langBtn"
+        aria-label="Switch Language"
+      >
+        <span class="lang-globe">🌐</span>
+        <span id="currentLang">EN</span>
+        <span class="lang-arrow">▾</span>
+      </button>
+
+      <div class="floating-lang-menu" id="langMenu">
+        <button class="lang-option active" data-lang="en">English</button>
+        <button class="lang-option" data-lang="fr">Français</button>
+        <button class="lang-option" data-lang="ar">العربية</button>
+      </div>
+    </div>
+
+    <!-- ================================================= -->
+    <!-- HERO SECTION -->
+    <!-- Main introduction + KENZ animation -->
+    <!-- ================================================= -->
+
+    <section class="hero">
+      <!-- Left Side: Text Content -->
+
+      <div class="hero-content">
+        <!-- Product Badges -->
+
+        <div class="hero-badges">
+          <span data-i18n="firstFeature"> ⚡ Rust Engine </span>
+
+          <span data-i18n="secondFeature"> 🔒 Offline First </span>
+
+          <span data-i18n="thirdFeature"> 🌎 Windows + macOS </span>
+        </div>
+
+        <!-- Main Title -->
+
+        <h1 data-i18n="heroTitle1">
+          Compress More.
+
+          <span data-i18n="heroTitle2"> Save Space. </span>
+        </h1>
+
+        <!-- Description -->
+
+        <p data-i18n="heroSub">
+          KENZ is a high-performance offline compression engine built with Rust
+          and Zstandard. Shrink large projects, backups, and file collections
+          without uploading your data anywhere.
+        </p>
+
+        <!-- Main Actions -->
+
+        <div class="hero-actions">
+          <button
+            class="primary-btn to-the-CTA"
+            data-i18n="downloadBtn"
+            id="downloadkenz"
+          >
+            ↓ Download KENZ
+          </button>
+
+          <button
+            class="secondary-btn"
+            data-i18n="seeFeaturesBtn"
+            id="seeFeaturesBtn"
+          >
+            See the features
+          </button>
+        </div>
+
+        <!-- Quick Product Facts -->
+
+        <div class="hero-proof">
+          <span data-i18n="applicationSize"> 3 MB Application </span>
+
+          <span data-i18n="losslessCompression"> Lossless Compression </span>
+
+          <span data-i18n="version"> KENZ v1.2.1 </span>
+        </div>
+      </div>
+
+      <!-- Right Side: Compression Visual -->
+
+      <div class="hero-stage">
+        <!-- Floating File Types -->
+
+        <div class="data-orbit orbit-1">
+          <span> .rs </span>
+
+          <span> .dll </span>
+
+          <span> .json </span>
+        </div>
+
+        <!-- KENZ Archive Core -->
+
+        <div class="kenz-core">
+          <!-- Energy Animation -->
+
+          <div class="energy-ring"></div>
+
+          <!-- Archive Face -->
+
+          <div class="archive-face">
+            <div class="kenz-symbol">K</div>
+
+            <div class="archive-type" data-i18n="archiveType">
+              .KENZ ARCHIVE
+            </div>
+
+            <div class="archive-size">
+              <span id="old-size" data-i18n="oldSize"> 28 GB </span>
+              <span id="new-size" data-i18n="newSize">➡️ 9 GB </span>
+            </div>
+          </div>
+
+          <!-- Scanning Effect -->
+
+          <div class="scan-line"></div>
+        </div>
+
+        <!-- Compression Result -->
+      </div>
+    </section>
+
+    <!-- ================================================= -->
+    <!-- WHY KENZ SECTION -->
+    <!-- Main advantages -->
+    <!-- ================================================= -->
+
+    <section class="why-kenz" id="features">
+      <div class="section-header">
+        <span data-i18n="theWhy"> WHY KENZ </span>
+
+        <h2 data-i18n="whyTitle">
+          Built for storage
+
+          <br />
+
+          without compromise.
+        </h2>
+
+        <p data-i18n="whySub">
+          A lightweight compression engine designed for developers and power
+          users.
+        </p>
+      </div>
+
+      <!-- Feature Cards -->
+
+      <div class="feature-grid">
+        <!-- Feature 1 -->
+
+        <div class="feature-card">
+          <div class="feature-number">01</div>
+
+          <div class="feature-icon">⚡</div>
+
+          <h3 data-i18n="firstFeature">Rust Engine</h3>
+
+          <p data-i18n="firstFeatureDesc">
+            Powered by Rust and Zstandard for efficient, high-speed local
+            compression.
+          </p>
+
+          <div class="feature-tag" data-i18n="featureTag1">
+            ZSTD LEVELS 1-22
+          </div>
+        </div>
+
+        <!-- Feature 2 -->
+
+        <div class="feature-card">
+          <div class="feature-number">02</div>
+
+          <div class="feature-icon">🔒</div>
+
+          <h3 data-i18n="secondFeature">Offline First</h3>
+
+          <p data-i18n="secondFeatureDesc">
+            Your files stay on your machine. No cloud uploads. No tracking.
+          </p>
+
+          <div class="feature-tag" data-i18n="featureTag2">
+            ZERO DATA TRANSFER
+          </div>
+        </div>
+
+        <!-- Feature 3 -->
+
+        <div class="feature-card">
+          <div class="feature-number">03</div>
+
+          <div class="feature-icon">📦</div>
+
+          <h3 data-i18n="thirdFeature">Massive Directory Ready</h3>
+
+          <p data-i18n="thirdFeatureDesc">
+            Designed for large projects, source code repositories, and thousands
+            of files.
+          </p>
+
+          <div class="feature-tag" data-i18n="featureTag3">LARGE DATASETS</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================= -->
+    <!-- BENCHMARK SECTION -->
+    <!-- Real compression examples -->
+    <!-- ================================================= -->
+
+    <section class="benchmark">
+      <div class="section-header">
+        <span data-i18n="realResults"> REAL RESULTS </span>
+
+        <h2 data-i18n="seeSpace">
+          See the space
+
+          <br />
+
+          KENZ saves.
+        </h2>
+
+        <p data-i18n="benchmarkSub">
+          Real compression tests from large development and data directories.
+        </p>
+      </div>
+
+      <!-- Benchmark Example 1 -->
+
+      <div class="benchmark-panel">
+        <div class="benchmark-item">
+          <div class="benchmark-label" data-i18n="originalLabel">ORIGINAL</div>
+
+          <h3 data-i18n="projectType">GAME PROJECT</h3>
+
+          <strong> 28 GB </strong>
+        </div>
+
+        <div class="benchmark-engine">
+          <div class="engine-circle">K</div>
+
+          <span data-i18n="zstdEngine"> ZSTD ENGINE </span>
+        </div>
+
+        <div class="benchmark-item result">
+          <div class="benchmark-label" data-i18n="compressedLabel">
+            COMPRESSED
+          </div>
+
+          <h3 data-i18n="archiveType">PROJECT.KENZ</h3>
+
+          <strong> 9 GB </strong>
+        </div>
+      </div>
+
+      <div class="saving-result">
+        <span data-i18n="storageSaved"> STORAGE SAVED </span>
+
+        <strong> 19 GB </strong>
+
+        <p data-i18n="smallerArchive">67% smaller archive</p>
+      </div>
+
+      <!-- Benchmark Example 2 -->
+
+      <div class="benchmark-panel">
+        <div class="benchmark-item">
+          <div class="benchmark-label" data-i18n="originalLabel">ORIGINAL</div>
+
+          <h3 data-i18n="projectType2">Coding Folder</h3>
+
+          <strong> 16 GB </strong>
+        </div>
+
+        <div class="benchmark-engine">
+          <div class="engine-circle">K</div>
+
+          <span data-i18n="zstdEngine"> ZSTD ENGINE </span>
+        </div>
+
+        <div class="benchmark-item result">
+          <div class="benchmark-label" data-i18n="compressedLabel">
+            COMPRESSED
+          </div>
+
+          <h3 data-i18n="archiveType">PROJECT.KENZ</h3>
+
+          <strong> 3.20 GB </strong>
+        </div>
+      </div>
+
+      <div class="saving-result">
+        <span data-i18n="storageSaved"> STORAGE SAVED </span>
+
+        <strong> 13.20 GB </strong>
+
+        <p data-i18n="smallerArchive">80% smaller archive</p>
+      </div>
+    </section>
+
+    <!-- ================================================= -->
+    <!-- The Interactive Demo -->
+    <!-- ================================================= -->
+
+    <section class="demo-section">
+      <!-- Section Title and Description -->
+      <div class="demo-header">
+        <span class="section-tag" data-i18n="interactiveDemoTitle"
+          >Interactive Demo</span
+        >
+        <h2 data-i18n="interactiveDemoSub">Watch KENZ compress reality.</h2>
+        <p data-i18n="interactiveDemoDesc">
+          Click the project folder to simulate the high-speed Zstd compression
+          engine in real-time.
+        </p>
+      </div>
+
+      <div class="demo-container">
+        <!-- Left Side: Interactive Trigger Area -->
+        <div class="interactive-zone" id="interactiveZone">
+          <!-- Original Files -->
+          <div class="floating-file extension-rs">.rs</div>
+          <div class="floating-file extension-json">.json</div>
+          <div class="floating-file extension-dll">.dll</div>
+
+          <!-- New Code, Media, and Database Files -->
+          <div class="floating-file extension-db">.db</div>
+          <div class="floating-file extension-sql">.sql</div>
+          <div class="floating-file extension-toml">.toml</div>
+          <div class="floating-file extension-js">.js</div>
+          <div class="floating-file extension-log">.log</div>
+          <div class="floating-file extension-bin">.bin</div>
+
+          <!-- Interactive Source Folder -->
+          <div class="source-folder" id="folderTrigger">
+            <div class="folder-icon">📁</div>
+            <span class="folder-name" data-i18n="folderNameDemo"
+              >my_old_project</span
+            >
+            <span class="folder-size">28.00 GB</span>
+          </div>
+        </div>
+
+        <!-- Right Side: The Kenz Application Simulator -->
+        <div class="app-simulator" id="appSimulator">
+          <!-- Telemetry Dashboard Panel -->
+          <div class="telemetry-panel">
+            <h3 data-i18n="statusCard">Engine Status</h3>
+            <div class="telemetry-row">
+              <span class="label" data-i18n="algorithmLabel">Algorithm</span>
+              <span class="value hardware-accent">ZSTD</span>
+            </div>
+            <div class="telemetry-row">
+              <span class="label" data-i18n="compressionLabel"
+                >Compression</span
+              >
+              <span
+                class="value"
+                id="telemetryLevel"
+                data-i18n="levelPlaceholder"
+                >LEVEL --</span
+              >
+            </div>
+            <div class="telemetry-row">
+              <span class="label" data-i18n="filesProcessedLabel"
+                >Files Processed</span
+              >
+              <span class="value" id="telemetryFiles">0</span>
+            </div>
+            <div class="telemetry-row">
+              <span class="label" data-i18n="modeLabel">Mode</span>
+              <span class="value mode-offline" data-i18n="modeOffline"
+                >OFFLINE</span
+              >
+            </div>
+          </div>
+
+          <!-- Core Output Destination Card -->
+          <div class="archive-card-wrapper">
+            <div class="archive-card" id="archiveCard">
+              <div class="brand-logo-k">K</div>
+              <span class="archive-label" data-i18n="archiveType"
+                >.KENZ ARCHIVE</span
+              >
+              <div class="live-counter" id="sizeCounter">28.00 GB</div>
+              <span class="status-text" id="statusText" data-i18n="statusText"
+                >Awaiting Input...</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ================================================= -->
+    <!-- Features Section -->
+    <!-- ================================================= -->
+    <section class="split-features-section">
+      <div class="features-main-header">
+        <span class="section-tag" data-i18n="sectionTag"
+          >Deep Capabilities</span
+        >
+        <h2 data-i18n="featuresTitle">Built for storage without compromise.</h2>
+        <p data-i18n="featuresSub">
+          Explore the low-level architecture driving KENZ's lightning-fast local
+          operations.
+        </p>
+      </div>
+
+      <div class="split-container">
+        <div class="split-left-sticky">
+          <div class="app-interface-mockup" id="appMockupFrame">
+            <div class="window-header">
+              <div class="window-dots">
+                <span class="dot-red"></span>
+                <span class="dot-amber"></span>
+                <span class="dot-green"></span>
+              </div>
+              <div class="window-title" id="windowTitle">
+                Kenz - Zstd Express
+              </div>
+            </div>
+
+            <div class="window-body">
+              <div class="app-sidebar">
+                <div class="sidebar-item active" id="side-engine">
+                  <span class="sidebar-emoji">📦</span>
+                  <span class="nav-text" data-i18n="sidebarCompress"
+                    >Compress</span
+                  >
+                </div>
+                <div class="sidebar-item" id="side-integrations">
+                  <span class="sidebar-emoji">📂</span>
+                  <span class="nav-text" data-i18n="sidebarDecompress"
+                    >Decompress</span
+                  >
+                </div>
+                <div class="sidebar-item" id="side-isolation">
+                  <span class="sidebar-emoji">📚</span>
+                  <span class="nav-text" data-i18n="sidebarHistory"
+                    >History</span
+                  >
+                </div>
+                <div class="sidebar-item" id="side-localization">
+                  <span class="sidebar-emoji">⚙️</span>
+                  <span class="nav-text" data-i18n="sidebarSettings"
+                    >Settings</span
+                  >
+                </div>
+              </div>
+
+              <div class="app-main-view">
+                <div class="preview-display">
+                  <div class="app-notification-toast" id="appNotification">
+                    <span class="toast-icon">🔔</span>
+                    <span class="toast-text" data-i18n="toastText"
+                      >Task completed successfully</span
+                    >
+                  </div>
+
+                  <div
+                    class="display-status-node"
+                    id="dynamicStatus"
+                    data-i18n="statusReady"
+                  >
+                    ENGINE READY
+                  </div>
+                  <div class="display-metric-large" id="dynamicMetric">
+                    0.00 GB
+                  </div>
+                  <div
+                    class="display-sub-label"
+                    id="dynamicLabel"
+                    data-i18n="statusText"
+                  >
+                    Awaiting local input directory payload...
+                  </div>
+
+                  <div class="visual-activity-bar" id="dynamicVisual">
+                    <div class="inner-pulse"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="split-right-scroll">
+          <div class="scroll-feature-block" data-feature="0">
+            <div class="feature-inline-title">
+              <span class="inline-emoji">📦</span>
+              <h4 data-i18n="featureWorkspace">Workspace</h4>
+            </div>
+            <h3 data-i18n="featureDragDrop">Fluid Drag & Drop Interception</h3>
+            <p data-i18n="featureDragDropDesc">
+              Bypass tedious system file picker menus. Drop massive developer
+              project folders directly anywhere into the active window frame to
+              capture and map paths instantly.
+            </p>
+            <div class="feature-tags-row">
+              <span data-i18n="tauriTag">Tauri Event Loop</span
+              ><span data-i18n="payloadTag">Payload Mapping</span>
+            </div>
+          </div>
+
+          <div class="scroll-feature-block" data-feature="1">
+            <div class="feature-inline-title">
+              <span class="inline-emoji">🌙</span>
+              <h4 data-i18n="featureTwoTitle">Interface Theme</h4>
+            </div>
+            <h3 data-i18n="featureTwoBigTitle">Native Dark Workspace</h3>
+            <p data-i18n="featurTwoDesc">
+              A beautifully optimized dark palette engineered to reduce eye
+              strain during late-night code archiving sessions. High contrast,
+              sharp text, and zero UI stutter.
+            </p>
+            <div class="feature-tags-row">
+              <span data-i18n="colorTag">#0B0F19 Base</span
+              ><span data-i18n="colorTagTwo">Deep Contrast</span>
+            </div>
+          </div>
+
+          <div class="scroll-feature-block" data-feature="2">
+            <div class="feature-inline-title">
+              <span class="inline-emoji">🌞</span>
+              <h4 data-i18n="featureTwoTitle">Interface Theme</h4>
+            </div>
+            <h3 data-i18n="featureBigThreeTitle">Clean Light Workspace</h3>
+            <p data-i18n="featureThreeDesc">
+              Prefer crisp day rendering? Toggle instantly into a clean, fully
+              light-mapped dashboard environment designed for daylight
+              visibility without changing assets.
+            </p>
+            <div class="feature-tags-row">
+              <span data-i18n="featureThreeFirstTag">Daylight Crisp</span
+              ><span data-i18n="featureThreeSecondTag">CSS Variables</span>
+            </div>
+          </div>
+
+          <div class="scroll-feature-block" data-feature="3">
+            <div class="feature-inline-title">
+              <span class="inline-emoji">🌍</span>
+              <h4 data-i18n="featureFourTitle">Localization</h4>
+            </div>
+            <h3 data-i18n="featureBigFourTitle">
+              Tri-Language Dictionary Engine
+            </h3>
+            <p data-i18n="featureFourDesc">
+              Switches between workspace interface languages natively. Instantly
+              maps and renders every single label cleanly across comprehensive
+              English, French, and Arabic setups.
+            </p>
+            <div class="feature-tags-row">
+              <span data-i18n="FeatureFourFirstTag">RTL Layout Support</span
+              ><span data-i18n="FeatureFourSecondTag">Local Dict Map</span>
+            </div>
+          </div>
+
+          <div class="scroll-feature-block" data-feature="4">
+            <div class="feature-inline-title">
+              <span class="inline-emoji">📊</span>
+              <h4 data-i18n="featureFiveTitle">Analytics</h4>
+            </div>
+            <h3 data-i18n="featureFiveBigTitle">
+              Real-Time Storage Statistics
+            </h3>
+            <p data-i18n="featureFiveDesc">
+              Track your data footprint metrics live. Compute exact compression
+              ratios, storage saved over time, and active engine worker
+              processing benchmarks instantly.
+            </p>
+            <div class="feature-tags-row">
+              <span data-i18n="featureFiveTagOne">SQLite Records</span
+              ><span data-i18n="featureFiveTagTwo">Ratio Telemetry</span>
+            </div>
+          </div>
+
+          <div class="scroll-feature-block" data-feature="5">
+            <div class="feature-inline-title">
+              <span class="inline-emoji">📂</span>
+              <h4 data-i18n="featureSixTitle">Integrations</h4>
+            </div>
+            <h3 data-i18n="featureSixBigTitle">Universal ZIP Support Layer</h3>
+            <p data-i18n="featureSixDesc">
+              Open fallback compatibility built natively. Packages compress in
+              sequentially unrolled structures, ensuring anyone can view or
+              extract them via standard WinRAR instantly.
+            </p>
+            <div class="feature-tags-row">
+              <span data-i18n="featureSixFirstTag">WinRAR Friendly</span
+              ><span data-i18n="featureSixSecondTag">Zero Lock-In</span>
+            </div>
+          </div>
+
+          <div class="scroll-feature-block" data-feature="6">
+            <div class="feature-inline-title">
+              <span class="inline-emoji">🔔</span>
+              <h4 data-i18n="featureSevenTitle">System Events</h4>
+            </div>
+            <h3 data-i18n="featureSevenBigTitle">
+              Asynchronous Task Notifications
+            </h3>
+            <p data-i18n="featureSevenDesc">
+              Never sit staring at a progress bar. Receive immediate local
+              popups and audio system toasts when a heavy multi-gigabyte
+              compression pipeline finishes writing to storage.
+            </p>
+            <div class="feature-tags-row">
+              <span data-i18n="featureSevenFirstTag"
+                >Native System OS Toast</span
+              ><span data-i18n="featureSevenSecondTag">Async Tasks</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ================================================= -->
+    <!-- How It Works -->
+    <!-- ================================================= -->
+
+    <section class="pipeline-process-section">
+      <div class="pipeline-section-header">
+        <span class="process-tag" data-i18n="piplelineTitle">The Pipeline</span>
+        <h2 data-i18n="pipelineSubTitle">Three Steps. Absolute Control.</h2>
+        <p data-i18n="pipelineDesc">
+          No unnecessary steps or nested menus. Drop, tweak, and carry on with
+          your workflow.
+        </p>
+      </div>
+
+      <div class="pipeline-steps-grid">
+        <div class="pipeline-step-card">
+          <div class="step-progress-wrapper">
+            <div class="step-badge-number">01</div>
+            <div class="step-connecting-line"></div>
+          </div>
+          <div class="step-content-box">
+            <div class="step-icon-indicator">📦</div>
+            <h3 data-i18n="stepOneTitle">Select or Drop</h3>
+            <p data-i18n="stepOneDesc">
+              Bypass tedious system file pickers entirely. Drag your heavy
+              workspace folders straight into the dashboard loop interface to
+              instantly map the file layout tree.
+            </p>
+            <ul class="step-feature-bullet-list">
+              <li data-i18n="stepOneFirstTag">
+                Supports massive developer folders
+              </li>
+              <li data-i18n="stepOneSecondTag">
+                Instant layout discovery mapping
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="pipeline-step-card">
+          <div class="step-progress-wrapper">
+            <div class="step-badge-number">02</div>
+            <div class="step-connecting-line"></div>
+          </div>
+          <div class="step-content-box">
+            <div class="step-icon-indicator">🎛️</div>
+            <h3 data-i18n="stepTwoTitle">Choose Your Level</h3>
+            <p data-i18n="stepTwoDesc">
+              Fine-tune your output target with a slider. Dial it down to Level
+              1 for lightning-fast archiving speeds, or max it out to Level 22
+              for ultra-dense, maximum disk space recovery.
+            </p>
+            <ul class="step-feature-bullet-list">
+              <li data-i18n="stepTwoFirstTag">
+                Levels 1–22 ZSTD Engine tuning
+              </li>
+              <li data-i18n="stepTwoSecondTag">
+                Adapts dynamically to system specs
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="pipeline-step-card">
+          <div class="step-progress-wrapper">
+            <div class="step-badge-number">03</div>
+          </div>
+          <div class="step-content-box">
+            <div class="step-icon-indicator">🔔</div>
+            <h3 data-i18n="stepThreeTitle">Set It and Forget It</h3>
+            <p data-i18n="stepThreeDesc">
+              Hit compress and immediately switch back to your editor or regular
+              tasks. The multi-threaded core runs silently in the background and
+              drops a system notification the second it finishes.
+            </p>
+            <ul class="step-feature-bullet-list">
+              <li data-i18n="stepThreeFirstTag">Zero UI rendering stutter</li>
+              <li data-i18n="stepThreeSecondTag">
+                Asynchronous native system toasts
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ================================================= -->
+    <!-- Screenshots Showcase Section -->
+    <!-- ================================================= -->
+    <section class="screenshots-showcase-section">
+      <div class="screenshots-header">
+        <span class="section-tag" data-i18n="showcaseTitle"
+          >Interface Blueprint</span
+        >
+        <h2 data-i18n="showcaseSubTitle">Explore the Desktop Workspace</h2>
+        <p data-i18n="showcaseDesc">
+          Take a closer look at the minimal, native interface built to handle
+          your heavy storage workflows.
+        </p>
+      </div>
+
+      <div class="screenshots-container">
+        <div class="screenshot-tabs-nav">
+          <button
+            class="screenshot-tab-btn active"
+            data-target="sc-compress"
+            data-i18n="showcaseCompressTab"
+          >
+            <span class="tab-emoji">📦</span> Compress
+          </button>
+          <button
+            class="screenshot-tab-btn"
+            data-target="sc-decompress"
+            data-i18n="showcaseDecompressTab"
+          >
+            <span class="tab-emoji">📂</span> Decompress
+          </button>
+          <button
+            class="screenshot-tab-btn"
+            data-target="sc-stats"
+            data-i18n="showcaseHistoryTab"
+          >
+            <span class="tab-emoji">📊</span> Statistics
+          </button>
+          <button
+            class="screenshot-tab-btn"
+            data-target="sc-settings"
+            data-i18n="showcaseSettingsTab"
+          >
+            <span class="tab-emoji">⚙️</span> Settings
+          </button>
+        </div>
+
+        <div class="screenshot-window-frame">
+          <div class="screenshot-window-header">
+            <div class="window-dots">
+              <span class="dot-red"></span>
+              <span class="dot-amber"></span>
+              <span class="dot-green"></span>
+            </div>
+            <div class="screenshot-window-title" id="screenshotFrameTitle">
+              Kenz — Compress View
+            </div>
+          </div>
+
+          <div class="screenshot-viewports-wrapper">
+            <div class="screenshot-panel active" id="sc-compress">
+              <div class="placeholder-screenshot-graphic">
+                <img
+                  src="Items/compress.png"
+                  alt="Kenz Desktop Compress Interface"
+                  class="app-screenshot-img"
+                />
+              </div>
+            </div>
+
+            <div class="screenshot-panel" id="sc-decompress">
+              <div class="placeholder-screenshot-graphic">
+                <img
+                  src="Items/decompress.png"
+                  alt="Kenz Desktop Decompress Interface"
+                  class="app-screenshot-img"
+                />
+              </div>
+            </div>
+
+            <div class="screenshot-panel" id="sc-stats">
+              <div class="placeholder-screenshot-graphic">
+                <img
+                  src="Items/statistics.png"
+                  alt="Kenz Desktop Storage Analytics Logs"
+                  class="app-screenshot-img"
+                />
+              </div>
+            </div>
+
+            <div class="screenshot-panel" id="sc-settings">
+              <div class="placeholder-screenshot-graphic">
+                <img
+                  src="Items/settings.png"
+                  alt="Kenz Desktop Workspace Settings"
+                  class="app-screenshot-img"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ================================================= -->
+    <!-- pricing MODEL -->
+    <!-- ================================================= -->
+    <section class="pricing-premium-section">
+      <!-- Section Title Header -->
+      <div class="pricing-header">
+        <span class="section-tag" data-i18n="pricingSectionTitle"
+          >Fair Licensing</span
+        >
+        <h2 data-i18n="pricingSectionSubTitle">
+          Own Your Software. Permanently.
+        </h2>
+        <p data-i18n="pricingSectionDesc">
+          No monthly SaaS drains. No mandatory cloud accounts. Pay once, use
+          locally forever.
+        </p>
+      </div>
+
+      <!-- Centered Elite Founder Card -->
+      <div class="pricing-card-container">
+        <div class="founder-pricing-card">
+          <!-- Urgency Header Badges -->
+          <div class="card-badge-row">
+            <span
+              class="badge-tag launch-glow"
+              data-i18n="pricingSectionCardTitle"
+              >🔥 Launch Offer</span
+            >
+          </div>
+
+          <!-- Core Price Frame -->
+          <div class="price-main-block">
+            <h3 data-i18n="pricingFrameSubTitle">Lifetime License</h3>
+            <div class="price-amount-wrapper">
+              <span class="currency" data-i18n="productPrice">MAD</span>
+              <span class="amount">300</span>
+            </div>
+            <p class="price-subtext" data-i18n="pricingPaymentNote">
+              One-time payment. Zero recurring subscriptions.
+            </p>
+          </div>
+
+          <!-- Live Dynamic Urgency Progress Bar -->
+          <div class="urgency-progress-bar">
+            <div class="progress-fill" style="width: 80%"></div>
+          </div>
+          <div class="progress-labels">
+            <span data-i18n="pricingClaimed">8 / 10 Licenses Claimed</span>
+            <span class="hurry-text" data-i18n="hurryPrice"
+              >Price increases soon</span
+            >
+          </div>
+
+          <!-- Feature Checklist Matrix -->
+          <ul class="pricing-feature-checklist">
+            <li>
+              <span class="check-icon">✓</span>
+              <div>
+                <strong data-i18n="proNumberOneTitle"
+                  >Lifetime Core Access</strong
+                >
+                <p data-i18n="proNumberOneDesc">
+                  Full permanent usage of the native Kenz desktop engine
+                  binaries.
+                </p>
+              </div>
+            </li>
+            <li>
+              <span class="check-icon">✓</span>
+              <div>
+                <strong data-i18n="proNumberTwoTitle"
+                  >All Future Engine Updates</strong
+                >
+                <p data-i18n="proNumberTwoDesc">
+                  Instant access to every upcoming optimization build layer
+                  without paying again.
+                </p>
+              </div>
+            </li>
+            <li>
+              <span class="check-icon">✓</span>
+              <div>
+                <strong data-i18n="proNumberThreeTitle"
+                  >100% Offline Local Control</strong
+                >
+                <p data-i18n="proNumberThreeDesc">
+                  Activates directly on your machine with zero remote cloud
+                  handshakes required.
+                </p>
+              </div>
+            </li>
+          </ul>
+
+          <!-- Primary Action Conversion Trigger Button -->
+          <button class="pricing-cta-btn to-the-CTA" data-i18n="pricingCta">
+            Secure Lifetime License <span class="arrow-slide">→</span>
+          </button>
+
+          <span class="secure-footer-note" data-i18n="pricingCtaHelper"
+            >🔒 Instant activation key delivered locally.</span
+          >
+        </div>
+      </div>
+    </section>
+    <!-- ================================================= -->
+    <!-- FAQ SECTION -->
+    <!-- ================================================= -->
+    <section class="faq-section">
+      <!-- Section Title Header -->
+      <div class="faq-header">
+        <span class="section-tag" data-i18n="faqBigTitle"
+          >Common Questions</span
+        >
+        <h2 data-i18n="faqTitle">Frequently Asked Questions</h2>
+        <p data-i18n="faqSectionDesc">
+          Everything you need to know about the Kenz engine, licenses, and local
+          operations.
+        </p>
+      </div>
+
+      <!-- FAQ Accordion Container -->
+      <div class="faq-container">
+        <!-- Item 1 -->
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span data-i18n="firstQuestion"
+              >How does the local lifetime license work?</span
+            >
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-content">
+            <div class="faq-content-inner">
+              <p data-i18n="firstAnswer">
+                It is a true one-time purchase. When you buy Kenz, you receive a
+                license key to activate your local desktop binary permanently.
+                There are absolutely no monthly SaaS fees, cloud subscription
+                traps, or recurring transaction cycles.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span data-i18n="questionTwo"
+              >Is my data sent to any external servers?</span
+            >
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-content">
+            <div class="faq-content-inner">
+              <p data-i18n="answerTwo">
+                Never. Kenz is built with a strict local-first, zero-knowledge
+                architecture. It operates entirely offline inside your local
+                system limits, with all processing executed directly on your
+                hardware. Your files and code never touch the cloud.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span data-i18n="questionThree"
+              >What makes the Kenz ZSTD engine better than standard ZIP
+              archives?</span
+            >
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-content">
+            <div class="faq-content-inner">
+              <p data-i18n="answerThree">
+                Standard ZIP compression is single-threaded and heavily
+                bottlenecked. Kenz leverages native Rust bindings to run
+                parallel multi-threaded Zstandard (ZSTD) pipelines. It
+                compresses your heavy developer directories and node_modules up
+                to twice as fast, with significantly higher compression ratios
+                and a lower memory footprint.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span data-i18n="questionFour"
+              >Can I extract my Kenz archives on other machines?</span
+            >
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-content">
+            <div class="faq-content-inner">
+              <p data-i18n="answerFour">
+                Yes! While Kenz uses an optimized pipeline to pack directories
+                locally, the output formats are designed to maintain standard
+                sequential structures. You can easily extract your compressed
+                projects on any system using common software like WinRAR, 7-Zip,
+                or Kenz itself.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 5 -->
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span data-i18n="questionFive"
+              >Does it support running alongside other tools in my
+              workflow?</span
+            >
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-content">
+            <div class="faq-content-inner">
+              <p data-i18n="answerFive">
+                Absolutely. Because Kenz limits its processing stream
+                chunk-by-chunk to avoid RAM spikes, you can hit compress on a
+                massive 28 GB folder and keep writing code, running local
+                servers, or compiling builds in the background without
+                experiencing system stutters.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ================================================= -->
+    <!-- FOOTER SECTION -->
+    <!-- ================================================= -->
+
+    <section class="kenz-footer-wrapper">
+      <!-- 1. FINAL CALL TO ACTION (CTA) -->
+      <div class="footer-cta-card" id="CTA-Button">
+        <div class="cta-glow-emitter"></div>
+        <span class="cta-mini-tag CTA-Button" data-i18n="ctaBigTitle"
+          >GET INSTANT ACCESS</span
+        >
+        <h2 data-i18n="ctaTitle">
+          Run your archiving engine at full throttle.
+        </h2>
+        <p data-i18n="ctaDesc">
+          Join the first wave of developers securing permanent, local drive
+          space. Fast, multi-threaded, and 100% offline.
+        </p>
+
+        <div class="cta-actions-group">
+          <button class="footer-download-btn" data-i18n="downloadWindows">
+            <span class="btn-os-icon">❖</span> Download for Windows
+          </button>
+
+          <button class="footer-download-btn mac-btn" data-i18n="downloadMacOs">
+            <span class="btn-os-icon">🍎</span> Download for macOS
+          </button>
+        </div>
+
+        <span class="system-requirements" data-i18n="systemRequirement"
+          >Requires Windows 10 or 11 (64-bit Architecture)</span
+        >
+      </div>
+
+      <!-- 2. SYSTEM DIVIDER -->
+      <div class="footer-line-divider"></div>
+
+      <!-- 3. BRAND & NAVIGATION FOOTER -->
+      <footer class="kenz-actual-footer">
+        <div class="footer-left-brand">
+          <!-- Your Custom Logo Icon styled beautifully -->
+          <div class="brand-logo-frame">
+            <img
+              src="Items/app-icon.png"
+              class="brand-custom-logo"
+              alt="Kenz System Logo"
+            />
+          </div>
+          <div class="brand-text-block">
+            <span class="brand-name" data-i18n="brandName">KENZ</span>
+            <p class="brand-tagline" data-i18n="brandTagline">
+              High-performance local archiving utility built natively in Rust.
+            </p>
+          </div>
+        </div>
+
+        <div class="footer-right-metadata">
+          <span class="copyright-label" data-i18n="websiteCopywrite"
+            >© 2026 Kenz. All rights reserved.</span
+          >
+          <div class="footer-policy-nav">
+            <a href="#privacy" data-i18n="websitePolicy"
+              >Privacy First Policy</a
+            >
+            <span class="nav-separator">•</span>
+            <a href="#terms" data-i18n="websiteLicense">License Agreement</a>
+          </div>
+        </div>
+      </footer>
+    </section>
+    <button id="backToTopBtn" class="back-to-top" aria-label="Scroll to top">
+      <span class="arrow-up">↑</span>
+    </button>
+    <!-- ================================================= -->
+    <!-- JavaScript -->
+    <!-- ================================================= -->
+
+    <script src="Items/app.js"></script>
+  </body>
+</html>
