@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy First Policy - Kenz</title>
+    <!-- Links to your existing stylesheet to maintain dark workspace branding -->
+    <link rel="stylesheet" href="Items/style.css" />
+    <style>
+      /* Minimal structural layout for policy content */
+      .policy-container {
+        max-width: 800px;
+        margin: 80px auto;
+        padding: 0 24px;
+        font-family: system-ui, sans-serif;
+        color: #94A3B8; /* Matching your deep text contrast */
+        line-height: 1.7;
+      }
+      .policy-container h1 {
+        color: #FFFFFF;
+        font-size: 2.5rem;
+        margin-bottom: 8px;
+        font-weight: 800;
+      }
+      .policy-container h2 {
+        color: #38BDF8; /* Your brand blue accent */
+        font-size: 1.5rem;
+        margin-top: 40px;
+        margin-bottom: 16px;
+        font-weight: 700;
+      }
+      .policy-card {
+        background: #0F172A;
+        border: 1px solid #1E293B;
+        border-radius: 12px;
+        padding: 24px;
+        margin: 24px 0;
+      }
+      .back-link {
+        display: inline-block;
+        color: #3B82F6;
+        text-decoration: none;
+        margin-bottom: 32px;
+        font-weight: 600;
+      }
+      .back-link:hover { text-decoration: underline; }
+    </style>
+  </head>
+  <body>
+    <div class="background-glow"></div>
+
+    <main class="policy-container">
+      <a href="index.html" class="back-link">← Return to Workspace</a>
+      
+      <h1>Privacy First Policy</h1>
+      <p>Last updated: July 2026</p>
+      
+      <div class="policy-card">
+        <strong>The Kenz Core Privacy Principle:</strong> We do not want, collect, or store your data. Period. Kenz is built from the ground up as a standalone local utility.
+      </div>
+
+      <h2>1. Zero Data Collection & Processing</h2>
+      <p>
+        The Kenz application operates with absolute cryptographic and network isolation. All file mapping, directory structure scanning, and asynchronous Zstandard (ZSTD) multi-threaded compression pipelines run strictly on your local computer hardware. 
+      </p>
+      <p>
+        No file content, directory names, or compression metadata are ever transferred, uploaded, or exposed to external servers or remote endpoints.
+      </p>
+
+      <h2>2. Local Infrastructure Architecture</h2>
+      <p>
+        Any operational records, statistics computation data, or license tokens required to operate the application are read and written using local files stored securely inside your operating system's native directory layer. No external telemetry hooks or analytics scripts are packaged inside the binary.
+      </p>
+
+      <h2>3. Website Infrastructure</h2>
+      <p>
+        This landing website (kenz.solutions) is a static deployment infrastructure hosted cleanly via GitHub Pages. No cookies are stored by Kenz, and no client-side tracking configurations are loaded during your session. 
+      </p>
+
+      <h2>4. Complete Machine Sovereignty</h2>
+      <p>
+        Because your environment remains 100% offline-first, you maintain exclusive control over your datasets, codebases, and archiving pipelines. You do not need a remote cloud account to purchase, deploy, or run Kenz.
+      </p>
+
+      <div style="margin-top: 60px; font-size: 14px; color: #64748B;">
+        © 2026 Kenz. All processing stays local.
+      </div>
+    </main>
+  </body>
+</html>
