@@ -17,3 +17,11 @@
 ## Licensing Models
 - **Pricing Strategy:** Fair software ownership model. 300 MAD one-time lifetime activation key. No subscription cycles.
 - **Official Host Platform:** Deployment landing grid mapped live at https://kenz.solutions/
+
+Benchmark (Level 22, Ryzen 7 5800X, NVMe SSD):
+
+node_modules project: 16 GB → 3 GB (81.3% reduction)
+Mixed JavaScript workspace: 8 GB → 1.5 GB (81.3% reduction)
+Web asset directory: 1.70 GB → 751 MB (56.7% reduction)
+
+Results vary depending on file types and compression level.
